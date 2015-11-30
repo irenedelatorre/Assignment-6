@@ -116,6 +116,11 @@ queue()
                     return 'translate('+d.x+','+d.y+')';
                 });
 
+            nodes.append("text")
+                .text(function(d) {return d.fullName})
+                .attr("text-anchor","middle")
+                .attr("y", 0);
+
             function gravity(k){ //for each of the nodes in the layout implement a different gravity for different nodes
                 //custom gravity: data points gravitate towards a straight line
                 return function(d){
